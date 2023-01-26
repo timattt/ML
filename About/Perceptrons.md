@@ -34,3 +34,16 @@ $$
 
 ![image](https://user-images.githubusercontent.com/25401699/214852662-7beccdf7-d07e-43f3-ad9a-23ff2986f148.png)
 
+## Модель ADALINE
+
+Заведем функцию стоимости (loss function):
+
+$$
+J(\vec w) = \frac{1}{2}|\vec y - X \vec w|^2
+$$
+
+Будем изменять веса в направлении **антиградиента**, пользуясь тензорным исчислением, легко получаем, что:
+
+$$
+\Delta w = - \eta \nabla J(\vec w) = \eta (\vec y - X \vec w \cdot X)
+$$
