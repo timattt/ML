@@ -6,3 +6,4 @@
 for a, b in zip(A, B):
   ...
 ```
+* pandas.read_csv - читает csv формат
