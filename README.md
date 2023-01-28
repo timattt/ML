@@ -4,7 +4,9 @@
 
 ### Алгоритмы
 
-1. [**Персептроны**](https://github.com/timattt/ML/blob/master/About/Perceptrons.md)
+* [**Персептроны**](https://github.com/timattt/ML/tree/master/Problems/Perceptron)
+
+### Scikit-learn
 
 ### Полезности
 
