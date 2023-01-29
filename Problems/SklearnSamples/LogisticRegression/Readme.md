@@ -26,9 +26,10 @@ $$
 Мы хотим накладывать штрафы за экстремальные веса параметров.
 Для этого к функции стоимости, которую минимизируем прибавим член, линейный к какой-нибудь норме.
 
+$$
 J(\vec w) = -\ln L(\vec w) = -\ln P(\vec y | \vec x \vec w) = 
--\ln \prod_{i=1}^{n} (\sigma((\vec w \cdot \vec x_i)))^{y^{(i)}}(1-\sigma((\vec w \cdot \vec x_i)))^{1-y^{(i)}}
-+ \frac{\lambda}{2}||\vec w||_{L_i}
+-\ln \prod_{i=1}^{n} (\sigma((\vec w \cdot \vec x_i)))^{y^{(i)}}(1-\sigma((\vec w \cdot \vec x_i)))^{1-y^{(i)}} + \frac{\lambda}{2}||\vec w||_{L_i}
+$$
 
 ### Полезные параметры
 
