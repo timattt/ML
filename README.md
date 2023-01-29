@@ -9,6 +9,7 @@
 ### Scikit-learn
 
 * [**Персептроны**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/Perceptron)
+* [**Логистическая регрессия**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/LogisticRegression)
 
 ### Полезности
 
