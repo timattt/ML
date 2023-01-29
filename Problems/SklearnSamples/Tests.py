@@ -7,6 +7,7 @@ from matplotlib.colors import ListedColormap
 from sklearn.metrics import accuracy_score
 
 import Perceptron.SKPerceptronTest
+import LogisticRegression.SKLogisticRegressionTest
 
 # DRAW
 def drawFeaturesPlane(Xtrain, ytrain, Xtest, ytest, prc, h = 0.02):
@@ -57,3 +58,4 @@ X_train_std = sc.transform(Xtrain)
 X_test_std = sc.transform(Xtest)
 
 drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, Perceptron.SKPerceptronTest.test(X_train_std, ytrain))
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, LogisticRegression.SKLogisticRegressionTest.test(X_train_std, ytrain))
