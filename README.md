@@ -8,6 +8,8 @@
 
 ### Scikit-learn
 
+* [**Персептроны**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/Perceptron)
+
 ### Полезности
 
 * [**Наивный Байесовский классификатор**](https://github.com/timattt/ML/blob/master/About/NaiveBayes.md)
