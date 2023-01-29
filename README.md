@@ -10,6 +10,7 @@
 
 * [**Персептроны**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/Perceptron)
 * [**Логистическая регрессия**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/LogisticRegression)
+* [**Метод опорных векторов**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/SVM)
 
 ### Полезности
 
