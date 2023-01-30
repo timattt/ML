@@ -12,9 +12,10 @@ import SVM.SKSVMLinearTest
 import SVM.SKSVMRBFTest
 import DecisionTree.SKDecisionTreeTest
 import RandomForest.SKRandomForestTest
+import KNN.SKKNNTest
 
 # DRAW
-def drawFeaturesPlane(Xtrain, ytrain, Xtest, ytest, prc, h = 0.02):
+def drawFeaturesPlane(Xtrain, ytrain, Xtest, ytest, prc, h = 0.02, name = None):
     X = np.vstack((Xtrain, Xtest))
     y = np.hstack((ytrain, ytest))
     
@@ -42,6 +43,7 @@ def drawFeaturesPlane(Xtrain, ytrain, Xtest, ytest, prc, h = 0.02):
         
     print("Верность: {}".format(accuracy_score(ytest, prc.predict(Xtest))))
         
+    plt.title(name)
     plt.xlabel('чашелистик')
     plt.ylabel('лепесток')
     plt.legend()
@@ -61,9 +63,10 @@ sc.fit(Xtrain)
 X_train_std = sc.transform(Xtrain)
 X_test_std = sc.transform(Xtest)
 
-#drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, Perceptron.SKPerceptronTest.test(X_train_std, ytrain))
-#drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, LogisticRegression.SKLogisticRegressionTest.test(X_train_std, ytrain))
-#drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, SVM.SKSVMLinearTest.test(X_train_std, ytrain))
-#drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, SVM.SKSVMRBFTest.test(X_train_std, ytrain))
-#drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, DecisionTree.SKDecisionTreeTest.test(X_train_std, ytrain))
-drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, RandomForest.SKRandomForestTest.test(X_train_std, ytrain))
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, Perceptron.SKPerceptronTest.test(X_train_std, ytrain), name="Перспептрон")
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, LogisticRegression.SKLogisticRegressionTest.test(X_train_std, ytrain), name="Логистическая регрессия")
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, SVM.SKSVMLinearTest.test(X_train_std, ytrain), name="Метод опорных векторов")
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, SVM.SKSVMRBFTest.test(X_train_std, ytrain), name="Метод опорных векторов с ядерным трюком")
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, DecisionTree.SKDecisionTreeTest.test(X_train_std, ytrain), name="Решающее дерево")
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, RandomForest.SKRandomForestTest.test(X_train_std, ytrain), name="Случайный лес")
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, KNN.SKKNNTest.test(X_train_std, ytrain), name="KNN")
