@@ -11,6 +11,7 @@ import LogisticRegression.SKLogisticRegressionTest
 import SVM.SKSVMLinearTest
 import SVM.SKSVMRBFTest
 import DecisionTree.SKDecisionTreeTest
+import RandomForest.SKRandomForestTest
 
 # DRAW
 def drawFeaturesPlane(Xtrain, ytrain, Xtest, ytest, prc, h = 0.02):
@@ -64,4 +65,5 @@ X_test_std = sc.transform(Xtest)
 #drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, LogisticRegression.SKLogisticRegressionTest.test(X_train_std, ytrain))
 #drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, SVM.SKSVMLinearTest.test(X_train_std, ytrain))
 #drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, SVM.SKSVMRBFTest.test(X_train_std, ytrain))
-drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, DecisionTree.SKDecisionTreeTest.test(X_train_std, ytrain))
+#drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, DecisionTree.SKDecisionTreeTest.test(X_train_std, ytrain))
+drawFeaturesPlane(X_train_std, ytrain, X_test_std, ytest, RandomForest.SKRandomForestTest.test(X_train_std, ytrain))
