@@ -13,6 +13,7 @@
 * [**Метод опорных векторов**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/SVM)
 * [**Дерево решений**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/DecisionTree)
 * [**Случайный лес**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/RandomForest)
+* [**KNN**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/KNN)
 
 ### Полезности
 
