@@ -13,9 +13,9 @@
 * [**Метод опорных векторов**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/SVM)
 * [**Дерево решений**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/DecisionTree)
 * [**Случайный лес**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/RandomForest)
+* [**KNN**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/KNN)
 
 ### Полезности
 
 * [**Наивный Байесовский классификатор**](https://github.com/timattt/ML/blob/master/About/NaiveBayes.md)
-* [**Метод K-ближайших соседей**](https://github.com/timattt/ML/blob/master/About/KNN.md)
 * [**Полезные питоновские методы**](https://github.com/timattt/ML/blob/master/About/UsefulMethods.md)
