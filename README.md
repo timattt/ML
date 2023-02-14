@@ -19,3 +19,4 @@
 
 * [**Наивный Байесовский классификатор**](https://github.com/timattt/ML/blob/master/About/NaiveBayes.md)
 * [**Полезные питоновские методы**](https://github.com/timattt/ML/blob/master/About/UsefulMethods.md)
+* [**Методы для работы с данными**](https://github.com/timattt/ML/tree/master/Problems/TrainingDataCreation)
