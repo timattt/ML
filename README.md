@@ -5,6 +5,7 @@
 ### Алгоритмы
 
 * [**Персептроны**](https://github.com/timattt/ML/tree/master/Problems/Perceptron)
+* [**Отбор информативных признаков**](https://github.com/timattt/ML/tree/master/Problems/MeaningfulFeatures)
 
 ### Scikit-learn
 
@@ -20,3 +21,4 @@
 * [**Наивный Байесовский классификатор**](https://github.com/timattt/ML/blob/master/About/NaiveBayes.md)
 * [**Полезные питоновские методы**](https://github.com/timattt/ML/blob/master/About/UsefulMethods.md)
 * [**Методы для работы с данными**](https://github.com/timattt/ML/tree/master/Problems/TrainingDataCreation)
+* [**Эксперимент с регуляризацией**](https://github.com/timattt/ML/tree/master/Problems/RegularizationExperiment)
