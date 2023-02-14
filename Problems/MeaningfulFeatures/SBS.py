@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pandas as pd
+import matplotlib.pyplot as plt
 
 #
 # SBS
@@ -87,11 +88,9 @@ X_train_std = stdsc.fit_transform(X_train)
 X_test_std = stdsc.transform(X_test)
 
 #
-# Test
+# SBS Test
 #
-
 from sklearn.neighbors import KNeighborsClassifier
-import matplotlib.pyplot as plt
 
 knn = KNeighborsClassifier(n_neighbors=2)
 sbs = SBS(knn, k=1)
@@ -103,5 +102,24 @@ plt.ylim([0.7, 1.1])
 plt.ylabel('Верность')
 plt.xlabel('Число признаков')
 plt.grid()
+plt.show()
+
+#
+# Importance test
+#
+from sklearn.ensemble import RandomForestClassifier
+
+feat_labels = df_wine.columns[1:]
+forest = RandomForestClassifier(n_estimators=10000, random_state=0,n_jobs=-1)
+
+forest.fit(X_train, y_train)
+importances = forest.feature_importances_
+indices = np.argsort(importances)[::-1]
+
+plt.title('Важности признаков')
+plt.bar(range(X_train.shape[1]), importances[indices], color='lightblue', align='center')
+plt.xticks(range(X_train.shape[1]), feat_labels[indices], rotation=90)
+plt.xlim([-1, X_train.shape[1]])
+plt.tight_layout()
 plt.show()
     
