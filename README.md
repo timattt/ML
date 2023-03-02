@@ -20,6 +20,7 @@
 ### Методы снижения размерности
 
 * [**PCA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/PCA)
+* [**LDA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/LDA)
 
 ### Полезности
 
