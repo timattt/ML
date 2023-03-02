@@ -15,6 +15,7 @@
 * [**Дерево решений**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/DecisionTree)
 * [**Случайный лес**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/RandomForest)
 * [**KNN**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/KNN)
+* [**Оценка важности признаков**](https://github.com/timattt/ML/tree/master/Problems/MeaningfulFeatures)
 
 ### Полезности
 
