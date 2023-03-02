@@ -17,6 +17,10 @@
 * [**KNN**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/KNN)
 * [**Оценка важности признаков**](https://github.com/timattt/ML/tree/master/Problems/MeaningfulFeatures)
 
+### Методы снижения размерности
+
+* [**PCA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/PCA)
+
 ### Полезности
 
 * [**Наивный Байесовский классификатор**](https://github.com/timattt/ML/blob/master/About/NaiveBayes.md)
