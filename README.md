@@ -21,6 +21,7 @@
 
 * [**PCA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/PCA)
 * [**LDA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/LDA)
+* [**Ядерный PCA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/PCA_RBF)
 
 ### Полезности
 
