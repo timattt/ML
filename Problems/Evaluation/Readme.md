@@ -18,6 +18,8 @@ Pipeline([ (NAME, TRANSFORMER) ]).fit(X_train, y_train).predict(X_test)
 можно разбить данные на k блоков и сделать k тестов, в каждом из которых
 один из блоков будет тестовым, а остальные учебными.
 
+![image](https://user-images.githubusercontent.com/25401699/222959194-f1181ad0-a5d3-4568-8cfa-e310bac4800c.png)
+
 Есть функция:
 
 ```
