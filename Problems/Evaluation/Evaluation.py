@@ -7,6 +7,8 @@ from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
+from sklearn.model_selection import cross_val_score
+
 #
 # Loading DB
 #
@@ -30,3 +32,9 @@ pipe_lr = Pipeline([('scl', StandardScaler()),
 pipe_lr.fit(X_train, y_train)
 
 print("Точность конвеера: {}".format(pipe_lr.score(X_test, y_test)))
+
+#
+# CROSS SCORING
+#
+scores = cross_val_score(pipe_lr, X_train, y_train, cv = 10)
+print(scores)
