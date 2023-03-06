@@ -58,3 +58,7 @@ train_scores, test_scores = validation_curve(estimator=pipe, X=X_train, y=y_trai
 
 Тут нужно указать параметр, его диапазон и кол. блоков для перекрестной проверки.
 
+Получим что-то такое:
+
+![image](https://user-images.githubusercontent.com/25401699/223059687-6ed4b542-68e4-43de-93f3-10daa2b70328.png)
+
