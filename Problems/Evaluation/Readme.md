@@ -78,7 +78,7 @@ GridSearchCV(estimator=pipe, param_grid=param_grid,cv=10)
 
 Хотим построить вот такую матрицу:
 
-
+![image](https://user-images.githubusercontent.com/25401699/223067030-20f76683-1ba2-4a38-8736-0e0683d8b3a5.png)
 
 Для этого есть функция:
 
