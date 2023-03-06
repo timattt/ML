@@ -25,3 +25,7 @@ Pipeline([ (NAME, TRANSFORMER) ]).fit(X_train, y_train).predict(X_test)
 ```
 cross_val_score(pipeline, X_train, y_train, cv = 10)
 ```
+
+## Кривая обучения
+
+Мы хотим получить зависимость точности модели от размера выборки.
