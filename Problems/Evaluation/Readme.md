@@ -62,3 +62,16 @@ train_scores, test_scores = validation_curve(estimator=pipe, X=X_train, y=y_trai
 
 ![image](https://user-images.githubusercontent.com/25401699/223059687-6ed4b542-68e4-43de-93f3-10daa2b70328.png)
 
+## Сеточный поиск
+
+Используем brute force. Будем просто перебирать гиперпараметры и выбирать такие, где точность максимальна.
+
+Для этого есть класс:
+
+```
+GridSearchCV(estimator=pipe, param_grid=param_grid,cv=10)
+```
+
+Тут мы задаем модель и массив словарей с параметрами, которые надо подогнать.
+
+

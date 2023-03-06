@@ -12,6 +12,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import learning_curve
 from sklearn.model_selection import validation_curve
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
 
 #
 # Loading DB
@@ -84,3 +86,14 @@ plt.ylabel('Точность')
 plt.ylim([0.9, 1.0])
 plt.show()
 
+#
+# Grid search
+#
+pipe_svc = Pipeline([('scl', StandardScaler()), ('clf', SVC(random_state=1))])
+param_range = [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
+param_grid = [{'clf__C' : param_range, 'clf__kernel' : ['linear']}, 
+              {'clf__C' : param_range, 'clf__gamma' : param_range, 'clf__kernel':['rbf']}]
+gs = GridSearchCV(estimator=pipe_svc, param_grid=param_grid, cv=10)
+gs.fit(X_train, y_train)
+print(gs.best_score_)
+print(gs.best_params_)
