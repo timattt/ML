@@ -37,3 +37,10 @@ cross_val_score(pipeline, X_train, y_train, cv = 10)
 
 ![image](https://user-images.githubusercontent.com/25401699/223056796-9e7dcec9-4136-45d8-b710-c1a18d512ad7.png)
 
+Для построения кривой у нас есть функция:
+
+```
+train_sizes, train_scores, test_scores = learning_curve(estimator=pipe, X=X_train, y=y_train, train_sizes=np.linspace(0.1, 1.0, 10), cv=10, n_jobs=1)
+```
+
+Тут мы передаем в параметры данные, модель и сетку размеров для тестирования, причем тестирование происходит перекрестной проверкой, за что отвечает параметр cv.
