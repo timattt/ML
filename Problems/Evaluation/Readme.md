@@ -29,3 +29,11 @@ cross_val_score(pipeline, X_train, y_train, cv = 10)
 ## Кривая обучения
 
 Мы хотим получить зависимость точности модели от размера выборки.
+Оптимум должен выглядеть вот так:
+
+![image](https://user-images.githubusercontent.com/25401699/223056659-ee295e7a-3839-43b6-938f-609780c2fa27.png)
+
+На нашем тестовом примере будет так:
+
+![image](https://user-images.githubusercontent.com/25401699/223056796-9e7dcec9-4136-45d8-b710-c1a18d512ad7.png)
+
