@@ -14,6 +14,7 @@ from sklearn.model_selection import learning_curve
 from sklearn.model_selection import validation_curve
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
+from sklearn.metrics import confusion_matrix
 
 #
 # Loading DB
@@ -95,5 +96,14 @@ param_grid = [{'clf__C' : param_range, 'clf__kernel' : ['linear']},
               {'clf__C' : param_range, 'clf__gamma' : param_range, 'clf__kernel':['rbf']}]
 gs = GridSearchCV(estimator=pipe_svc, param_grid=param_grid, cv=10)
 gs.fit(X_train, y_train)
+
 print(gs.best_score_)
 print(gs.best_params_)
+
+#
+# Confusion matrix
+#
+pipe_svc.fit(X_train, y_train)
+y_pred = pipe_svc.predict(X_test)
+confmat = confusion_matrix(y_test, y_pred)
+print(confmat)
