@@ -11,6 +11,7 @@ from sklearn.pipeline import Pipeline
 
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import learning_curve
+from sklearn.model_selection import validation_curve
 
 #
 # Loading DB
@@ -47,7 +48,6 @@ print(scores)
 #
 pipe_lr = Pipeline([('scl', StandardScaler()), ('clf', LogisticRegression(penalty = 'l2'))])
 train_sizes, train_scores, test_scores = learning_curve(estimator=pipe_lr, X=X_train, y=y_train, train_sizes=np.linspace(0.1, 1.0, 10), cv=10, n_jobs=1)
-
 print(train_sizes)
 print(train_scores)
 print(test_scores)
@@ -59,6 +59,26 @@ plt.fill_between(train_sizes, np.mean(test_scores, axis=1) - np.std(test_scores,
 plt.legend()
 plt.grid()
 plt.xlabel('Размер выборки')
+plt.ylabel('Точность')
+
+plt.ylim([0.9, 1.0])
+plt.show()
+
+#
+# Validation curve
+#
+pipe_lr = Pipeline([('scl', StandardScaler()), ('clf', LogisticRegression(penalty = 'l2', max_iter=100))])
+param_range = [0.001, 0.01, 0.1, 1.0, 10.0, 100.0]
+train_scores, test_scores = validation_curve(estimator=pipe_lr, X=X_train, y=y_train, param_name='clf__C', param_range=param_range, cv=10)
+
+plt.xscale('log')
+plt.plot(param_range, np.mean(train_scores, axis = 1), color='green', label='train')
+plt.plot(param_range, np.mean(test_scores, axis = 1), color='red', label='test')
+plt.fill_between(param_range, np.mean(train_scores, axis=1) - np.std(train_scores, axis=1) , np.mean(train_scores, axis=1)+np.std(train_scores, axis=1) , color='green', alpha=0.15)
+plt.fill_between(param_range, np.mean(test_scores, axis=1) - np.std(test_scores, axis=1) , np.mean(test_scores, axis=1)+np.std(test_scores, axis=1) , color='red', alpha=0.15)
+plt.legend()
+plt.grid()
+plt.xlabel('C')
 plt.ylabel('Точность')
 
 plt.ylim([0.9, 1.0])
