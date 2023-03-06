@@ -15,6 +15,8 @@ from sklearn.model_selection import validation_curve
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score, f1_score
 
 #
 # Loading DB
@@ -107,3 +109,11 @@ pipe_svc.fit(X_train, y_train)
 y_pred = pipe_svc.predict(X_test)
 confmat = confusion_matrix(y_test, y_pred)
 print(confmat)
+
+#
+# Precision and recall
+#
+print("Точность: {}".format(precision_score(y_test, y_pred)))
+print("Полнота: {}".format(recall_score(y_test, y_pred)))
+print("f1: {}".format(f1_score(y_test, y_pred)))
+

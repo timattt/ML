@@ -86,3 +86,34 @@ GridSearchCV(estimator=pipe, param_grid=param_grid,cv=10)
 confusion_matrix(y_test, y_pred)
 ```
 
+## Метрики
+
+* Точность
+
+$$
+PRE = \frac{TP}{TP + FP}
+$$
+
+```
+precision_score(y_test, y_pred)
+```
+
+* Полнота
+
+$$
+REC = \frac{TP}{FN + TP}
+$$
+
+```
+recall_score(y_test, y_pred)
+```
+
+* F1
+
+$$
+F1 = 2 \frac{PRE * REC}{PRE + REC}
+$$
+
+```
+f1_score(y_test, y_pred)
+```
