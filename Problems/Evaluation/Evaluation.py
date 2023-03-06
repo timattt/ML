@@ -17,6 +17,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score, f1_score
+from sklearn.metrics import roc_curve
 
 #
 # Loading DB
@@ -117,3 +118,18 @@ print("Точность: {}".format(precision_score(y_test, y_pred)))
 print("Полнота: {}".format(recall_score(y_test, y_pred)))
 print("f1: {}".format(f1_score(y_test, y_pred)))
 
+#
+# ROC curve
+#
+X_train = X_train[:, [4, 14]]
+X_test = X_test[:, [4, 14]]
+pipe_lr = Pipeline([('scl', StandardScaler()), ('pca', PCA(n_components=2)), ('clf', LogisticRegression(penalty = 'l2'))])
+proba = pipe_lr.fit(X_train, y_train).predict_proba(X_test)
+
+fpr, tpr, thresholds = roc_curve(y_test, proba[:,1], pos_label=1)
+
+plt.plot(fpr, tpr)
+plt.grid()
+plt.xlabel("FP")
+plt.ylabel("TP")
+plt.show()
