@@ -17,3 +17,8 @@
 
 ![image](https://user-images.githubusercontent.com/25401699/223388475-8611da95-dd4a-443c-ba47-11ce5022b528.png)
 
+## Код
+
+```
+ada = AdaBoostClassifier(estimator=tree, n_estimators=500, learning_rate=0.1)
+```
