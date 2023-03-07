@@ -24,6 +24,12 @@
 * [**LDA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/LDA)
 * [**Ядерный PCA**](https://github.com/timattt/ML/tree/master/Problems/DimensionReduction/PCA_RBF)
 
+### Ансамблирование
+
+* [**Мажоритарное голосование**](https://github.com/timattt/ML/tree/master/Problems/Ensembles/MajorityVoting)
+* [**Bagging**](https://github.com/timattt/ML/tree/master/Problems/Ensembles/Bagging)
+* [**AdaBoost**](https://github.com/timattt/ML/tree/master/Problems/Ensembles/AdaptiveBoosting)
+
 ### Полезности
 
 * [**Наивный Байесовский классификатор**](https://github.com/timattt/ML/blob/master/About/NaiveBayes.md)
