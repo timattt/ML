@@ -5,6 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.tree._classes import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import AdaBoostClassifier
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -31,10 +32,10 @@ y = LabelEncoder().fit_transform(y)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4)
 
 #
-# BAGGING
+# AdaBoost
 #
-tree = DecisionTreeClassifier(criterion='entropy', max_depth=None)
-bag = BaggingClassifier(estimator=tree, n_estimators = 500, max_samples=1.0, max_features=1.0,bootstrap=True, bootstrap_features=False)
+tree = DecisionTreeClassifier(criterion='entropy', max_depth=1)
+ada = AdaBoostClassifier(estimator=tree, n_estimators=500, learning_rate=0.1)
 
 #
 # DRAW
@@ -48,7 +49,7 @@ xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.1), np.arange(y_min, y_max, 0.1))
 
 f, axarr = plt.subplots(nrows=1,ncols=2, sharex='col', sharey='row', figsize=(8,3))
 
-for idx, clf, tt in zip([0, 1], [tree, bag], ['Tree', 'Bagging']):
+for idx, clf, tt in zip([0, 1], [tree, ada], ['Tree', 'Ada']):
     clf.fit(X_train, y_train)
     y_pred = clf.predict(X_test)
     print("accuracy for {} is {:.2f}".format(tt, np.mean(cross_val_score(clf, X_test, y_test, cv = 10))))
