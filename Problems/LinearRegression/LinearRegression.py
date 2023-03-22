@@ -27,5 +27,13 @@ print(df.head())
 #
 sns.set(style='whitegrid', context='notebook')
 cols = ['LSTAT', 'INDUS', 'NOX', 'RM', 'MEDV']
-sns.pairplot(df[cols], size=2.5)
+sns.pairplot(df[cols], height=2.5)
+plt.show()
+
+#
+# Correlation coefs
+#
+cm = np.corrcoef(df[cols].values.T)
+sns.set(font_scale=1.5)
+hm = sns.heatmap(cm, cbar=True, annot=True, square=True, fmt='0.2f', annot_kws={'size':15}, yticklabels=cols, xticklabels=cols)
 plt.show()
