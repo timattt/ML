@@ -42,5 +42,5 @@ $$
 Если коэф. корреляции равен единице, значит есть линейная зависимость.
 
 $$
-\sigma_{xy}' = \frac{\sigma_{xy}}{\sigma_x \sigma_y}
+\sigma_{xy}' = \frac{\sigma_{xy}}{\sigma_{x} \sigma_{y}}
 $$
