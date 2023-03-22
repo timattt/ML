@@ -11,11 +11,15 @@
 Используем:
 ```sns.pairplot```
 
+![image](https://user-images.githubusercontent.com/25401699/226959043-3c0714ea-7b18-460a-958f-5427189c7f39.png)
+
 ### Представление матрицы в виде графика
 
 Также можно легко нарисовать матрицу. Например, матрицу корреляции.
 Используем:
 ```sns.heatmap```
+
+![image](https://user-images.githubusercontent.com/25401699/226959110-255435cc-e941-4e81-b16b-4ed96d383d0f.png)
 
 ## Матрицы
 
@@ -73,6 +77,8 @@ $$
 LinearRegression().fit(X, y).predict(X_new)
 ```
 
+![image](https://user-images.githubusercontent.com/25401699/226959279-36112146-3f5f-43c3-9567-93165e9516d9.png)
+
 ## Выбросы
 
 Некоторые точки слишком далеко от прямой МНК - они называются выбросы,
@@ -85,6 +91,8 @@ LinearRegression().fit(X, y).predict(X_new)
 добавить их в не-выбросы.
 3. Еще раз обучить модель на всех не-выбросах.
 4. Оценить ошибку, если все ок, то закончить. Если нет, то начать сначала.
+
+![image](https://user-images.githubusercontent.com/25401699/226959360-8e83e5ef-c0d6-4362-aba2-169ffa951fd9.png)
 
 ## Оценка качества модели
 
@@ -137,12 +145,18 @@ $$
 
 А дальше к этим данныи уже можно применять обычную линейную регрессию.
 
+![image](https://user-images.githubusercontent.com/25401699/226959465-c78f9fd5-5ae1-4f6f-8646-9b7931d30ebd.png)
+
 ## Регрессия на основе дерева решений
 
 Используем теорию, аналогичную классификатору из дерева решений.
 Есть класс ```DecisionTreeRegression```.
 
+![image](https://user-images.githubusercontent.com/25401699/226959548-57c27115-ec25-4374-8a1e-bba41b484b65.png)
+
 ## Регрессия на основе случайного леса
 
 Случайные леса менее чувствительны к выбросам.
 Есть класс ```RandomForestRegressor```
+
+![image](https://user-images.githubusercontent.com/25401699/226959605-5f875f17-f43e-42d4-8916-424f98c55645.png)
