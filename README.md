@@ -17,6 +17,7 @@
 * [**KNN**](https://github.com/timattt/ML/tree/master/Problems/SklearnSamples/KNN)
 * [**Оценка важности признаков**](https://github.com/timattt/ML/tree/master/Problems/MeaningfulFeatures)
 * [**Методы оценки и отладки моделей**](https://github.com/timattt/ML/tree/master/Problems/Evaluation)
+* [**Линейная регрессия**](https://github.com/timattt/ML/tree/master/Problems/LinearRegression)
 
 ### Методы снижения размерности
 
