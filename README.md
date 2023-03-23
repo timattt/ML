@@ -18,6 +18,7 @@
 * [**Оценка важности признаков**](https://github.com/timattt/ML/tree/master/Problems/MeaningfulFeatures)
 * [**Методы оценки и отладки моделей**](https://github.com/timattt/ML/tree/master/Problems/Evaluation)
 * [**Линейная регрессия**](https://github.com/timattt/ML/tree/master/Problems/LinearRegression)
+* [**Кластерный анализ**](https://github.com/timattt/ML/tree/master/Problems/ClusterAnalysis)
 
 ### Методы снижения размерности
 
