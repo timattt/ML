@@ -46,7 +46,11 @@ $$
 
 Мы хотим минимизировать функцию ошибки, но параметры схемы - это $W_1$, $W_2$, $\vec b_1$, $\vec b_2$.
 Для использования алгоритма градиентного спуска, потребуются градиенты по всем этим переменным.
-Очевидно, что из явного вида функции ошибки сразу следуют выражения для $\frac{\partial I}{\partial \vec A_3}$
+Очевидно, что из явного вида функции ошибки сразу следуют выражения для 
+
+$$
+\frac{\partial I}{\partial \vec A_3} = \frac{A_3^k - y_k}{A_3^k (1 - A_3^k)}
+$$
 
 ## Алгоритм обратного распространения ошибки
 
@@ -125,4 +129,51 @@ $$
 
 Теперь можно получить градиенты для случая сети с одним скрытым слоем.
 
-Итак, надо найти: $\frac{\partial I}{\partial W_k}$, \frac{\partial I}{\partial \vec b_k}, где k = 1, 2.
+Итак, надо найти: $\frac{\partial I}{\partial W_k}$, $\frac{\partial I}{\partial \vec b_k}$, где k = 1, 2.
+
+Пусть
+
+$$
+\frac{\partial I}{\partial \vec A_3} = \vec \delta
+$$
+
+Используем предыдущие формулы. Тогда имеем для второго слоя:
+
+$$
+\frac{\partial I}{\partial z_3^k} = \frac{\partial I}{\partial A_3^k} \sigma'(z_3^k) =
+\frac{A_3^k - y_k}{A_3^k (1 - A_3^k)} \sigma(z_3^k) (1 - \sigma(z_3^k)) =
+\frac{A_3^k - y_k}{A_3^k (1 - A_3^k)} A_3^k (1 - A_3^k) = A_3^k - y_k = \delta_k
+$$
+
+Здесь учли, что $\sigma'(x) = \sigma(x)[1 - \sigma(x)]$ и $\sigma(z_3^k) = A_3^k$
+
+И далее, очевидно:
+
+$$
+\frac{\partial I}{\partial W_2} = \vec A_2^T \vec \delta
+$$
+
+$$
+\frac{\partial I}{\partial \vec b_2} = \vec \delta
+$$
+
+$$
+\frac{\partial I}{\partial \vec A_2} = \vec \delta * W_2^T
+$$
+
+Тогда для первого слоя:
+
+$$
+\frac{\partial I}{\partial z_2} = \frac{\partial I}{\partial A_2} \odot \sigma'(z_2) = 
+\vec \delta * W_2^T \odot \sigma'(z_2)
+$$
+
+$$
+\frac{\partial I}{\partial W_1} = \vec A_1^T * \frac{\partial I}{\partial \vec z_2} = \vec A_1^T * \vec \delta * W_2^T \odot \sigma'(z_2)
+$$
+
+$$
+\frac{\partial I}{\partial b_1} = \frac{\partial I}{\partial \vec z_2} = \vec \delta * W_2^T \odot \sigma'(z_2)
+$$
+
+Итого имеем все градиенты.
