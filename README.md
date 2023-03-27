@@ -6,6 +6,7 @@
 
 * [**Персептроны**](https://github.com/timattt/ML/tree/master/Problems/Perceptron)
 * [**Отбор информативных признаков**](https://github.com/timattt/ML/tree/master/Problems/MeaningfulFeatures)
+* [**Многослойная персептронная сеть**](https://github.com/timattt/ML/tree/master/Problems/NN)
 
 ### Scikit-learn
 
