@@ -2,9 +2,12 @@ from keras.datasets import mnist
 from MLP import MLP
 from sklearn.tests.test_multioutput import n_outputs
 from sklearn.preprocessing.tests.test_data import n_features
+import warnings
 
 import numpy as np
 import matplotlib.pyplot as plt
+
+warnings.filterwarnings('ignore')
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -22,7 +25,13 @@ nn = MLP(n_output=10,
          decrease_const=0.00001,
          minibatches=50)
 
-nn.fit(X_train, y_train)
+TRAIN = False
+
+if TRAIN:
+    nn.fit(X_train, y_train)
+    nn.save()
+else:
+    nn.load()
 
 y_test_pred = nn.predict(X_test)
 print('Верность на тестовом: {}/{}'.format(np.sum(y_test_pred == y_test, axis=0), X_test.shape[0]))

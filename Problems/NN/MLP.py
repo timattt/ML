@@ -1,5 +1,9 @@
 import numpy as np
 import sys
+from tempfile import mkdtemp
+import os.path as path
+import pyprind
+import time
 
 def add_bias_unit(X, how):
     if how == 'column':
@@ -111,9 +115,11 @@ class MLP:
         delta_w1prev = np.zeros(self.w1.shape)
         delta_w2prev = np.zeros(self.w2.shape)
         
+        pbar = pyprind.ProgBar(self.epochs_, monitor=True)
+        
         for i in range(self.epochs_):
-            sys.stderr.write("epoch: [%d/%d]\n" % (i+1, self.epochs_))
-            sys.stderr.flush()
+            #sys.stderr.write("epoch: [%d/%d]\n" % (i+1, self.epochs_))
+            #sys.stderr.flush()
             
             self.eta_ /= (1 + self.decrease_const_ * i)
         
@@ -135,9 +141,50 @@ class MLP:
                 
                 delta_w1prev = delta_w1
                 delta_w2prev = delta_w2
+                
+            pbar.update(force_flush=True, item_id = str("{}/{}".format(i, self.epochs_)))
+        
+        print(pbar)
+         
+    def see(self):
+        print("MLP:")
+        print(self.w1)
+        print(self.w2)
             
     def predict(self, X):
         a1, z2, a2, z3, a3 = self.feed_forward(X, self.w1, self.w2)
         y_pred = np.argmax(z3, axis = 0)
         return y_pred
+    
+    def save(self):
+        filename = 'w1.dat'
+        fp = np.memmap(filename, dtype='float32', mode='w+', shape=(self.n_hidden_, self.n_features_ + 1))
+        fp[:] = self.w1[:]
+        fp.flush()
+        
+        filename = 'w2.dat'
+        fp = np.memmap(filename, dtype='float32', mode='w+', shape=(self.n_output_, self.n_hidden_ + 1))
+        fp[:] = self.w2[:]
+        fp.flush()
+        
+        filename = 'cost.dat'
+        fp = np.memmap(filename, dtype='float32', mode='w+', shape=(len(self.cost_)))
+        fp[:] = self.cost_[:]
+        fp.flush()
+        
+    def load(self):
+        filename = 'w1.dat'
+        fp = np.memmap(filename, dtype='float32', mode='r', shape=(self.n_hidden_, self.n_features_ + 1))
+        self.w1[:] = fp[:]
+        fp.flush()
+        
+        filename = 'w2.dat'
+        fp = np.memmap(filename, dtype='float32', mode='r', shape=(self.n_output_, self.n_hidden_ + 1))
+        self.w2[:] = fp[:]
+        fp.flush()
+        
+        filename = 'cost.dat'
+        fp = np.memmap(filename, dtype='float32', mode='r')
+        self.cost_ = fp.copy()
+        fp.flush()
         
