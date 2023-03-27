@@ -90,7 +90,7 @@ $$
 
 $$
 \frac{\partial Q_k}{\partial W_{ij}} =
-\frac{\partial}{\partial W_{ij}} [ W \vec P + \vec b ] =
-\frac{\partial}{\partial W_{ij}} [ sum_{m = 1}^{n} W_{km} P_m + b k] =
+\frac{\partial}{\partial W_{ij}} ( W \vec P + \vec b ) =
+\frac{\partial}{\partial W_{ij}} ( \sum_{m = 1}^{n} W_{km} P_m + b_k) =
 
 $$
