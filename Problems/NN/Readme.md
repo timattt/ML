@@ -58,11 +58,13 @@ $$
 Тогда нужно найти: $\frac{\partial I}{\partial W}$, $\frac{\partial I}{\partial \vec b}$, $\frac{\partial I}{\partial \vec P}$.
 
 Имеем:
+
 $$
 \vec Q = W \vec P + \vec b
 $$
+
 $$
-\vec R = \sigma(\vec R)
+\vec R = \sigma(\vec Q)
 $$
 
 В данном случае будем считать все векторы строками, а не столбцами.
