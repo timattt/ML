@@ -100,3 +100,21 @@ $$
 \frac{\partial I}{\partial b_i} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial b_i} =
 \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \delta_{ik} = \sum_{k=1}^n \frac{\partial I}{\partial Q_i}
 $$
+
+Получаем 4 фундаментальных соотношения:
+
+$$
+\frac{\partial I}{\partial \vec Q} = \frac{\partial I}{\partial \vec R} \odot \sigma'(\vec Q)
+$$
+
+$$
+\frac{\partial I}{\partial \vec P} = \frac{\partial I}{\partial \vec Q} W^T
+$$
+
+$$
+\frac{\partial I}{\partial W} = \vec P^T \frac{\partial I}{\partial \vec Q}
+$$
+
+$$
+\frac{\partial I}{\partial \vec b} = \frac{\partial I}{\partial \vec Q}
+$$
