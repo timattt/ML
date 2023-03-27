@@ -83,14 +83,13 @@ $$
 
 $$
 \frac{\partial I}{\partial W_{ij}} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial W_{ij}} =
-\frac{\partial I}{\partial Q_i} \frac{\partial Q_i}{\partial W_{ij}}= \frac{\partial I}{\partial Q_i} P_j
+\frac{\partial I}{\partial Q_i} P_j
 $$
 
 Во-втором переходе учли, что 
 
 $$
 \frac{\partial Q_k}{\partial W_{ij}} =
-\frac{\partial}{\partial W_{ij}} ( W \vec P + \vec b ) =
-\frac{\partial}{\partial W_{ij}} ( \sum_{m = 1}^{n} W_{km} P_m + b_k) =
-
+\frac{\partial}{\partial W_{ij}} ( W \vec P + \vec b )_k =
+\frac{\partial}{\partial W_{ij}} ( \sum_{m = 1}^{n} W_{km} P_m + b_k) = P_j \delta_{ik}
 $$
