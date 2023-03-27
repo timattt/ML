@@ -9,15 +9,19 @@
 $$
 \vec A_1 = \vec x
 $$
+
 $$
 \vec z_2 = W_1 \vec A_1 + \vec b_1
 $$
+
 $$
 \vec A_2 = \sigma(\vec z_2)
 $$
+
 $$
 \vec z_3 = W_2 \vec A_2 + \vec b_2
 $$
+
 $$
 \vec A_3 = \sigma(\vec z_3)
 $$
