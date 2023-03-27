@@ -93,3 +93,10 @@ $$
 \frac{\partial}{\partial W_{ij}} ( W \vec P + \vec b )_k =
 \frac{\partial}{\partial W_{ij}} ( \sum_{m = 1}^{n} W_{km} P_m + b_k) = P_j \delta_{ik}
 $$
+
+Аналогично, но проще:
+
+$$
+\frac{\partial I}{\partial b_i} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial b_i} =
+\sum_{k=1}^n \frac{\partial I}{\partial Q_k} \delta_{ik} = \sum_{k=1}^n \frac{\partial I}{\partial Q_i}
+$$
