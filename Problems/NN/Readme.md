@@ -47,3 +47,48 @@ $$
 Мы хотим минимизировать функцию ошибки, но параметры схемы - это $W_1$, $W_2$, $\vec b_1$, $\vec b_2$.
 Для использования алгоритма градиентного спуска, потребуются градиенты по всем этим переменным.
 Очевидно, что из явного вида функции ошибки сразу следуют выражения для $\frac{\partial I}{\partial \vec A_3}$
+
+## Алгоритм обратного распространения ошибки
+
+Теперь нужно научится быстро считать нужные частные производные.
+
+![image](https://user-images.githubusercontent.com/25401699/228018540-9659f253-d390-47c4-941c-f122388f2324.png)
+
+Рассмотрим один слой. Пусть известно $\frac{\partial I}{\partial \vec R}$.
+Тогда нужно найти: $\frac{\partial I}{\partial W}$, $\frac{\partial I}{\partial \vec b}$, $\frac{\partial I}{\partial \vec P}$.
+
+Имеем:
+$$
+\vec Q = W \vec P + \vec b
+$$
+$$
+\vec R = \sigma(\vec R)
+$$
+
+В данном случае будем считать все векторы строками, а не столбцами.
+
+Используем прямую связь.
+
+$$
+\frac{\partial I}{\partial Q_i} = \frac{\partial I}{\partial R_i} \frac{\partial R_i}{\partial Q_i} = \frac{\partial I}{\partial R_i} \sigma'(Q_i)
+$$
+
+Учитываем перекрестную связь.
+
+$$
+\frac{\partial I}{\partial P_i} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial P_i}
+$$
+
+Берем сложную производную.
+
+$$
+\frac{\partial I}{\partial W_{ij}} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial W_{ij}} =
+\frac{\partial I}{\partial Q_i} \frac{\partial Q_i}{\partial W_{ij}}= \frac{\partial I}{\partial Q_i} P_j
+$$
+
+Во-втором переходе учли, что 
+$$
+\frac{\partial Q_k}{\partial W_{ij}} =
+\frac{\partial}{\partial W_{ij}} W \vec P + \vec b =
+\frac{\partial}{\partial W_{ij}} W \vec P + \vec b
+$$
