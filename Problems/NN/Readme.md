@@ -120,3 +120,9 @@ $$
 $$
 \frac{\partial I}{\partial \vec b} = \frac{\partial I}{\partial \vec Q}
 $$
+
+## Частный случай
+
+Теперь можно получить градиенты для случая сети с одним скрытым слоем.
+
+Итак, надо найти: $\frac{\partial I}{\partial W_k}$, \frac{\partial I}{\partial \vec b_k}, где k = 1, 2.
