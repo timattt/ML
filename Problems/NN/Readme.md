@@ -69,19 +69,19 @@ $$
 
 В данном случае будем считать все векторы строками, а не столбцами.
 
-Используем прямую связь.
+1. Используем прямую связь.
 
 $$
 \frac{\partial I}{\partial Q_i} = \frac{\partial I}{\partial R_i} \frac{\partial R_i}{\partial Q_i} = \frac{\partial I}{\partial R_i} \sigma'(Q_i)
 $$
 
-Учитываем перекрестную связь.
+2. Учитываем перекрестную связь.
 
 $$
 \frac{\partial I}{\partial P_i} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial P_i}
 $$
 
-Берем сложную производную.
+3. Берем сложную производную.
 
 $$
 \frac{\partial I}{\partial W_{ij}} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial W_{ij}} =
@@ -96,14 +96,14 @@ $$
 \frac{\partial}{\partial W_{ij}} ( \sum_{m = 1}^{n} W_{km} P_m + b_k) = P_j \delta_{ik}
 $$
 
-Аналогично, но проще:
+4. Аналогично, но проще:
 
 $$
 \frac{\partial I}{\partial b_i} = \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \frac{\partial Q_k}{\partial b_i} =
 \sum_{k=1}^n \frac{\partial I}{\partial Q_k} \delta_{ik} = \sum_{k=1}^n \frac{\partial I}{\partial Q_i}
 $$
 
-Получаем 4 фундаментальных соотношения:
+**Получаем 4 фундаментальных соотношения**
 
 $$
 \frac{\partial I}{\partial \vec Q} = \frac{\partial I}{\partial \vec R} \odot \sigma'(\vec Q)
